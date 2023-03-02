@@ -495,10 +495,8 @@ function calculateValues(e) {
             (un.innerText = un
               .closest('.stockRate')
               .classList.contains('frontRowSiRow')
-              ? un.closest('.stockRate').getAttribute('data-metric-rate') +
-                '  ml'
-              : un.closest('.stockRate').getAttribute('data-metric-rate') +
-                ' lbs')
+              ? un.closest('.stockRate').getAttribute('data-us-rate') + '  ml'
+              : un.closest('.stockRate').getAttribute('data-us-rate') + ' lbs')
         )
       document
         .querySelectorAll('#main-table .stockRate  .small')
