@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Industrial';
+  src: url('Industrial-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Industrial';
+  src: url('Industrial-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 .content * {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
@@ -24,6 +40,19 @@ html {
 .header label,
 .header p {
   color: #fff;
+}
+
+@font-face {
+  font-family: Industrial;
+  font-style: normal;
+  src: url(IndustryTest-Medium.otf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: Industrial;
+  font-style: normal;
+  src: url(IndustryTest-Bold.otf);
+  font-weight: bold;
 }
 /**** PREVIEW***/
 
