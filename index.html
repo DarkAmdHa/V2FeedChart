@@ -26,16 +26,43 @@
       <div class="header">
         <h1>Custom Feed Chart</h1>
         <label for="type">1. Select Irrigation Method</label>
-        <select id="type" name="type" onchange="calculateValues()">
+        <select
+          id="type"
+          name="type"
+          onchange="calculateValues()"
+          style="display: none"
+        >
           <option value="DtL" selected>Direct to Reservoir</option>
-          <option value="conc">Stock Concentrate</option>
+          <option value="conc">3-2-2 Stock Concentrate</option>
         </select>
+        <div class="irrigationMetod visualContainer">
+          <button data-value="DtL" class="optionSelectBtn optionSelected">
+            Direct To Reservoir
+          </button>
+          <button data-value="conc" class="optionSelectBtn">
+            3-2-2 Stock Concentrate
+          </button>
+        </div>
 
         <label for="unit">2. Select Unit</label>
-        <select id="unit" name="unit" onchange="calculateValues()">
-          <option value="metric" selected>Metric (g/L)</option>
-          <option value="imperial">Imperial (g/Gal)</option>
+        <select
+          id="unit"
+          name="unit"
+          onchange="calculateValues()"
+          style="display: none"
+        >
+          <option value="imperial" selected>Imperial (g/Gal)</option>
+          <option value="metric">Metric (g/L)</option>
         </select>
+
+        <div class="unitSelectContainer visualContainer">
+          <button data-value="imperial" class="optionSelectBtn optionSelected">
+            US (ml/gal)
+          </button>
+          <button data-value="metric" class="optionSelectBtn">
+            Metric (ml/L)
+          </button>
+        </div>
         <p>3. Input Weekly EC Targets</p>
       </div>
 
