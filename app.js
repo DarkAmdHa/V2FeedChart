@@ -66,7 +66,7 @@ function calculateValues(e) {
       ptB_vegMomsConstant = 11.3
       ptA_flowerWeekConstant = 8.89
       ptB_flowerWeekConstant = 8.89
-      bloom_flowerWeekConstant = 1.0663
+      bloom_flowerWeekConstant = 8.89
       siStockRate = 200
       phosZymeStockRate = 0.35
       phosZymeConstant = (0.4 / (phosZymeStockRate * 454)) * 3785
@@ -322,38 +322,40 @@ function calculateValues(e) {
   */
   //TODO: Add an error if an option was not selected
   /*if (select.value == 'DtL') {*/
-  $('.veg1_pA_out1').val(vegMom_ptA.toFixed(2))
-  $('.veg2_pA_out1').val(flow1_ptA.toFixed(2))
-  $('.veg3_pA_out1').val(flow2_ptA.toFixed(2))
-  $('.flow1_pA_out1').val(flow3_ptA.toFixed(2))
-  $('.flow2_pA_out1').val(flow4_ptA.toFixed(2))
-  $('.flow3_pA_out1').val(flow5_ptA.toFixed(2))
-  $('.flow4_pA_out1').val(flow6_ptA.toFixed(2))
-  $('.flow5_pA_out1').val(flow7_ptA.toFixed(2))
-  $('.flow6_pA_out1').val(flow8_ptA.toFixed(2))
-  $('.flow7_pA_out1').val(flow9_ptA.toFixed(2))
 
-  $('.veg1_pB_out1').val(vegMom_ptB.toFixed(2))
-  $('.veg2_pB_out1').val(flow1_ptB.toFixed(2))
-  $('.veg3_pB_out1').val(flow2_ptB.toFixed(2))
-  $('.flow1_pB_out1').val(flow3_ptB.toFixed(2))
-  $('.flow2_pB_out1').val(flow4_ptB.toFixed(2))
-  $('.flow3_pB_out1').val(flow5_ptB.toFixed(2))
-  $('.flow4_pB_out1').val(flow6_ptB.toFixed(2))
-  $('.flow5_pB_out1').val(flow7_ptB.toFixed(2))
-  $('.flow6_pB_out1').val(flow8_ptB.toFixed(2))
-  $('.flow7_pB_out1').val(flow9_ptB.toFixed(2))
+  let decimalPoint = selectedUnit.value === 'imperial' ? 1 : 2
+  $('.veg1_pA_out1').val(vegMom_ptA.toFixed(decimalPoint))
+  $('.veg2_pA_out1').val(flow1_ptA.toFixed(decimalPoint))
+  $('.veg3_pA_out1').val(flow2_ptA.toFixed(decimalPoint))
+  $('.flow1_pA_out1').val(flow3_ptA.toFixed(decimalPoint))
+  $('.flow2_pA_out1').val(flow4_ptA.toFixed(decimalPoint))
+  $('.flow3_pA_out1').val(flow5_ptA.toFixed(decimalPoint))
+  $('.flow4_pA_out1').val(flow6_ptA.toFixed(decimalPoint))
+  $('.flow5_pA_out1').val(flow7_ptA.toFixed(decimalPoint))
+  $('.flow6_pA_out1').val(flow8_ptA.toFixed(decimalPoint))
+  $('.flow7_pA_out1').val(flow9_ptA.toFixed(decimalPoint))
 
-  $('.veg1_blm_out1').val(vegMom_bloom.toFixed(2))
-  $('.veg2_blm_out1').val(flow1_bloom.toFixed(2))
-  $('.veg3_blm_out1').val(flow2_bloom.toFixed(2))
-  $('.flow1_blm_out1').val(flow3_bloom.toFixed(2))
-  $('.flow2_blm_out1').val(flow4_bloom.toFixed(2))
-  $('.flow3_blm_out1').val(flow5_bloom.toFixed(2))
-  $('.flow4_blm_out1').val(flow6_bloom.toFixed(2))
-  $('.flow5_blm_out1').val(flow7_bloom.toFixed(2))
-  $('.flow6_blm_out1').val(flow8_bloom.toFixed(2))
-  $('.flow7_blm_out1').val(flow9_bloom.toFixed(2))
+  $('.veg1_pB_out1').val(vegMom_ptB.toFixed(decimalPoint))
+  $('.veg2_pB_out1').val(flow1_ptB.toFixed(decimalPoint))
+  $('.veg3_pB_out1').val(flow2_ptB.toFixed(decimalPoint))
+  $('.flow1_pB_out1').val(flow3_ptB.toFixed(decimalPoint))
+  $('.flow2_pB_out1').val(flow4_ptB.toFixed(decimalPoint))
+  $('.flow3_pB_out1').val(flow5_ptB.toFixed(decimalPoint))
+  $('.flow4_pB_out1').val(flow6_ptB.toFixed(decimalPoint))
+  $('.flow5_pB_out1').val(flow7_ptB.toFixed(decimalPoint))
+  $('.flow6_pB_out1').val(flow8_ptB.toFixed(decimalPoint))
+  $('.flow7_pB_out1').val(flow9_ptB.toFixed(decimalPoint))
+
+  $('.veg1_blm_out1').val(vegMom_bloom.toFixed(decimalPoint))
+  $('.veg2_blm_out1').val(flow1_bloom.toFixed(decimalPoint))
+  $('.veg3_blm_out1').val(flow2_bloom.toFixed(decimalPoint))
+  $('.flow1_blm_out1').val(flow3_bloom.toFixed(decimalPoint))
+  $('.flow2_blm_out1').val(flow4_bloom.toFixed(decimalPoint))
+  $('.flow3_blm_out1').val(flow5_bloom.toFixed(decimalPoint))
+  $('.flow4_blm_out1').val(flow6_bloom.toFixed(decimalPoint))
+  $('.flow5_blm_out1').val(flow7_bloom.toFixed(decimalPoint))
+  $('.flow6_blm_out1').val(flow8_bloom.toFixed(decimalPoint))
+  $('.flow7_blm_out1').val(flow9_bloom.toFixed(decimalPoint))
   /* unit.each((i, unit) => (unit.innerText = 'grams'))
   } else if (select.value == 'conc') {
     if (input[0].value == 2.4) {
@@ -418,27 +420,27 @@ function calculateValues(e) {
 
     unit.each((i, ut) => (ut.innerText = 'ML'))
   }*/
-  $('.si_veg1').val(vegMom_si.toFixed(2))
-  $('.si_veg2').val(flow1_si.toFixed(2))
-  $('.si_veg3').val(flow2_si.toFixed(2))
-  $('.si_flow1').val(flow3_si.toFixed(2))
-  $('.si_flow2').val(flow4_si.toFixed(2))
-  $('.si_flow3').val(flow5_si.toFixed(2))
-  $('.si_flow4').val(flow6_si.toFixed(2))
-  $('.si_flow5').val(flow7_si.toFixed(2))
-  $('.si_flow6').val(flow8_si.toFixed(2))
-  $('.si_flow7').val(flow9_si.toFixed(2))
+  $('.si_veg1').val(vegMom_si.toFixed(decimalPoint))
+  $('.si_veg2').val(flow1_si.toFixed(decimalPoint))
+  $('.si_veg3').val(flow2_si.toFixed(decimalPoint))
+  $('.si_flow1').val(flow3_si.toFixed(decimalPoint))
+  $('.si_flow2').val(flow4_si.toFixed(decimalPoint))
+  $('.si_flow3').val(flow5_si.toFixed(decimalPoint))
+  $('.si_flow4').val(flow6_si.toFixed(decimalPoint))
+  $('.si_flow5').val(flow7_si.toFixed(decimalPoint))
+  $('.si_flow6').val(flow8_si.toFixed(decimalPoint))
+  $('.si_flow7').val(flow9_si.toFixed(decimalPoint))
 
-  $('.phosZyme_veg1').val(vegMom_phosZyme.toFixed(2))
-  $('.phosZyme_flow1').val(flow1_phosZyme.toFixed(2))
-  $('.phosZyme_flow2').val(flow2_phosZyme.toFixed(2))
-  $('.phosZyme_flow3').val(flow3_phosZyme.toFixed(2))
-  $('.phosZyme_flow4').val(flow4_phosZyme.toFixed(2))
-  $('.phosZyme_flow5').val(flow5_phosZyme.toFixed(2))
-  $('.phosZyme_flow6').val(flow6_phosZyme.toFixed(2))
-  $('.phosZyme_flow7').val(flow7_phosZyme.toFixed(2))
-  $('.phosZyme_flow8').val(flow8_phosZyme.toFixed(2))
-  $('.phosZyme_flow9').val(flow9_phosZyme.toFixed(2))
+  $('.phosZyme_veg1').val(vegMom_phosZyme.toFixed(decimalPoint))
+  $('.phosZyme_flow1').val(flow1_phosZyme.toFixed(decimalPoint))
+  $('.phosZyme_flow2').val(flow2_phosZyme.toFixed(decimalPoint))
+  $('.phosZyme_flow3').val(flow3_phosZyme.toFixed(decimalPoint))
+  $('.phosZyme_flow4').val(flow4_phosZyme.toFixed(decimalPoint))
+  $('.phosZyme_flow5').val(flow5_phosZyme.toFixed(decimalPoint))
+  $('.phosZyme_flow6').val(flow6_phosZyme.toFixed(decimalPoint))
+  $('.phosZyme_flow7').val(flow7_phosZyme.toFixed(decimalPoint))
+  $('.phosZyme_flow8').val(flow8_phosZyme.toFixed(decimalPoint))
+  $('.phosZyme_flow9').val(flow9_phosZyme.toFixed(decimalPoint))
 
   if (select.value === 'DtL') {
     document.querySelector('#main-table').classList.remove('concShowing')
@@ -671,4 +673,35 @@ const setInputTabDim = () => {
       document.querySelector('.units-column').offsetWidth
     }px`)
 }
+
+//Use more cool looking buttons to choose settings:
+document
+  .querySelectorAll('.irrigationMetod .optionSelectBtn')
+  .forEach((button) => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault()
+      document.querySelector('select#type').value =
+        button.getAttribute('data-value')
+      document.querySelector('select#type').dispatchEvent(new Event('change'))
+      button.parentElement
+        .querySelector('.optionSelected')
+        .classList.remove('optionSelected')
+      button.classList.add('optionSelected')
+    })
+  })
+document
+  .querySelectorAll('.unitSelectContainer .optionSelectBtn')
+  .forEach((button) => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault()
+      document.querySelector('select#unit').value =
+        button.getAttribute('data-value')
+      document.querySelector('select#unit').dispatchEvent(new Event('change'))
+      button.parentElement
+        .querySelector('.optionSelected')
+        .classList.remove('optionSelected')
+      button.classList.add('optionSelected')
+    })
+  })
+
 setInputTabDim()
