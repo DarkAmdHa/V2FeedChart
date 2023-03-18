@@ -14,6 +14,19 @@ p {
   padding: 0;
 }
 
+/**** PREVIEW***/
+html {
+  min-height: 100vh;
+  background: #000;
+}
+
+.header h1,
+.header label,
+.header p {
+  color: #fff;
+}
+/**** PREVIEW***/
+
 .dtlShowing .stockRate,
 .dtlShowing .stockRate-column {
   display: none;
@@ -317,10 +330,49 @@ td > table {
   -webkit-print-color-adjust: exact;
 }
 
+.visualContainer {
+  display: flex;
+  gap: 20px;
+  margin: 10px 0;
+  width: 40%;
+}
+
+.visualContainer .optionSelectBtn {
+  width: 50%;
+  transition: 0.5s ease;
+  padding: 10px 10px;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: Industrial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 16px;
+  background-color: #fff;
+  color: #000;
+}
+
+.visualContainer .optionSelectBtn.optionSelected {
+  background: #910000;
+  color: #fff;
+  border-color: #fff;
+}
+
+.visualContainer .optionSelectBtn:not(.optionSelected):hover {
+  background: #a0a0a0;
+  color: #fff;
+  border-color: #fff;
+}
+
 #main-table tr.main-table-row.total-row {
   background-color: #333;
   height: 2.5rem;
   color: #fff;
+  display: none;
 }
 
 #main-table tr.main-table-row.total-row td {
@@ -425,6 +477,9 @@ h1 {
     justify-content: center;
     align-items: center;
   }
+  .visualContainer {
+    width: 80%;
+  }
 }
 
 @media print {
@@ -433,6 +488,7 @@ h1 {
     visibility: hidden;
     display: none;
   }
+
   .logo {
     display: block;
     margin-left: 200px;
@@ -501,6 +557,21 @@ h1 {
   }
   .secondary-output {
     font-size: 0.8rem;
+  }
+
+  /*.optionSelectBtn:not(.optionSelected) {
+    display: none;
+  }*/
+  .optionSelectBtn.optionSelected {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .header h1,
+  .header label,
+  .header p {
+    color: #000;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
   @page {
