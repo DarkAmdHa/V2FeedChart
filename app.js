@@ -456,7 +456,7 @@ function calculateValues(e) {
         .forEach((un) => (un.innerText = 'Grams'))
       document
         .querySelectorAll('#main-table .units  .small')
-        .forEach((un) => (un.innerText = 'per litter'))
+        .forEach((un) => (un.innerText = 'per liter'))
     } else {
       document
         .querySelectorAll('#main-table .units .unit')
@@ -488,7 +488,7 @@ function calculateValues(e) {
         )
       document
         .querySelectorAll('#main-table .stockRate  .small')
-        .forEach((un) => (un.innerText = 'per litter'))
+        .forEach((un) => (un.innerText = 'per liter'))
     } else {
       document
         .querySelectorAll('#main-table .stockRate .unit')
@@ -660,6 +660,7 @@ function displayTable(e) {
 
 //Setting the dimensions of the input table to the dimensions of the main table
 const setInputTabDim = () => {
+  
   const l = document.querySelectorAll('.inputs'),
     e = document.querySelectorAll('.weeks')
   l.forEach((l, o) => {
@@ -704,4 +705,5 @@ document
     })
   })
 
-setInputTabDim()
+  setInputTabDim()
+
