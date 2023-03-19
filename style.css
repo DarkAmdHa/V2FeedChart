@@ -42,18 +42,6 @@ html {
   color: #fff;
 }
 
-@font-face {
-  font-family: Industrial;
-  font-style: normal;
-  src: url(IndustryTest-Medium.otf);
-  font-weight: 400;
-}
-@font-face {
-  font-family: Industrial;
-  font-style: normal;
-  src: url(IndustryTest-Bold.otf);
-  font-weight: bold;
-}
 /**** PREVIEW***/
 
 .dtlShowing .stockRate,
@@ -607,3 +595,8 @@ h1 {
     size: portrait;
   }
 }
+
+.results table tbody tr:first-child + tr {
+  display: none; 
+}
+
