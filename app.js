@@ -323,39 +323,46 @@ function calculateValues(e) {
   //TODO: Add an error if an option was not selected
   /*if (select.value == 'DtL') {*/
 
+  let mainDecimalPoint =
+    select.value != 'DtL' && selectedUnit.value === 'imperial'
+      ? 0
+      : selectedUnit.value === 'imperial'
+      ? 1
+      : 2
+
   let decimalPoint = selectedUnit.value === 'imperial' ? 1 : 2
-  $('.veg1_pA_out1').val(vegMom_ptA.toFixed(decimalPoint))
-  $('.veg2_pA_out1').val(flow1_ptA.toFixed(decimalPoint))
-  $('.veg3_pA_out1').val(flow2_ptA.toFixed(decimalPoint))
-  $('.flow1_pA_out1').val(flow3_ptA.toFixed(decimalPoint))
-  $('.flow2_pA_out1').val(flow4_ptA.toFixed(decimalPoint))
-  $('.flow3_pA_out1').val(flow5_ptA.toFixed(decimalPoint))
-  $('.flow4_pA_out1').val(flow6_ptA.toFixed(decimalPoint))
-  $('.flow5_pA_out1').val(flow7_ptA.toFixed(decimalPoint))
-  $('.flow6_pA_out1').val(flow8_ptA.toFixed(decimalPoint))
-  $('.flow7_pA_out1').val(flow9_ptA.toFixed(decimalPoint))
+  $('.veg1_pA_out1').val(vegMom_ptA.toFixed(mainDecimalPoint))
+  $('.veg2_pA_out1').val(flow1_ptA.toFixed(mainDecimalPoint))
+  $('.veg3_pA_out1').val(flow2_ptA.toFixed(mainDecimalPoint))
+  $('.flow1_pA_out1').val(flow3_ptA.toFixed(mainDecimalPoint))
+  $('.flow2_pA_out1').val(flow4_ptA.toFixed(mainDecimalPoint))
+  $('.flow3_pA_out1').val(flow5_ptA.toFixed(mainDecimalPoint))
+  $('.flow4_pA_out1').val(flow6_ptA.toFixed(mainDecimalPoint))
+  $('.flow5_pA_out1').val(flow7_ptA.toFixed(mainDecimalPoint))
+  $('.flow6_pA_out1').val(flow8_ptA.toFixed(mainDecimalPoint))
+  $('.flow7_pA_out1').val(flow9_ptA.toFixed(mainDecimalPoint))
 
-  $('.veg1_pB_out1').val(vegMom_ptB.toFixed(decimalPoint))
-  $('.veg2_pB_out1').val(flow1_ptB.toFixed(decimalPoint))
-  $('.veg3_pB_out1').val(flow2_ptB.toFixed(decimalPoint))
-  $('.flow1_pB_out1').val(flow3_ptB.toFixed(decimalPoint))
-  $('.flow2_pB_out1').val(flow4_ptB.toFixed(decimalPoint))
-  $('.flow3_pB_out1').val(flow5_ptB.toFixed(decimalPoint))
-  $('.flow4_pB_out1').val(flow6_ptB.toFixed(decimalPoint))
-  $('.flow5_pB_out1').val(flow7_ptB.toFixed(decimalPoint))
-  $('.flow6_pB_out1').val(flow8_ptB.toFixed(decimalPoint))
-  $('.flow7_pB_out1').val(flow9_ptB.toFixed(decimalPoint))
+  $('.veg1_pB_out1').val(vegMom_ptB.toFixed(mainDecimalPoint))
+  $('.veg2_pB_out1').val(flow1_ptB.toFixed(mainDecimalPoint))
+  $('.veg3_pB_out1').val(flow2_ptB.toFixed(mainDecimalPoint))
+  $('.flow1_pB_out1').val(flow3_ptB.toFixed(mainDecimalPoint))
+  $('.flow2_pB_out1').val(flow4_ptB.toFixed(mainDecimalPoint))
+  $('.flow3_pB_out1').val(flow5_ptB.toFixed(mainDecimalPoint))
+  $('.flow4_pB_out1').val(flow6_ptB.toFixed(mainDecimalPoint))
+  $('.flow5_pB_out1').val(flow7_ptB.toFixed(mainDecimalPoint))
+  $('.flow6_pB_out1').val(flow8_ptB.toFixed(mainDecimalPoint))
+  $('.flow7_pB_out1').val(flow9_ptB.toFixed(mainDecimalPoint))
 
-  $('.veg1_blm_out1').val(vegMom_bloom.toFixed(decimalPoint))
-  $('.veg2_blm_out1').val(flow1_bloom.toFixed(decimalPoint))
-  $('.veg3_blm_out1').val(flow2_bloom.toFixed(decimalPoint))
-  $('.flow1_blm_out1').val(flow3_bloom.toFixed(decimalPoint))
-  $('.flow2_blm_out1').val(flow4_bloom.toFixed(decimalPoint))
-  $('.flow3_blm_out1').val(flow5_bloom.toFixed(decimalPoint))
-  $('.flow4_blm_out1').val(flow6_bloom.toFixed(decimalPoint))
-  $('.flow5_blm_out1').val(flow7_bloom.toFixed(decimalPoint))
-  $('.flow6_blm_out1').val(flow8_bloom.toFixed(decimalPoint))
-  $('.flow7_blm_out1').val(flow9_bloom.toFixed(decimalPoint))
+  $('.veg1_blm_out1').val(vegMom_bloom.toFixed(mainDecimalPoint))
+  $('.veg2_blm_out1').val(flow1_bloom.toFixed(mainDecimalPoint))
+  $('.veg3_blm_out1').val(flow2_bloom.toFixed(mainDecimalPoint))
+  $('.flow1_blm_out1').val(flow3_bloom.toFixed(mainDecimalPoint))
+  $('.flow2_blm_out1').val(flow4_bloom.toFixed(mainDecimalPoint))
+  $('.flow3_blm_out1').val(flow5_bloom.toFixed(mainDecimalPoint))
+  $('.flow4_blm_out1').val(flow6_bloom.toFixed(mainDecimalPoint))
+  $('.flow5_blm_out1').val(flow7_bloom.toFixed(mainDecimalPoint))
+  $('.flow6_blm_out1').val(flow8_bloom.toFixed(mainDecimalPoint))
+  $('.flow7_blm_out1').val(flow9_bloom.toFixed(mainDecimalPoint))
   /* unit.each((i, unit) => (unit.innerText = 'grams'))
   } else if (select.value == 'conc') {
     if (input[0].value == 2.4) {
@@ -420,16 +427,21 @@ function calculateValues(e) {
 
     unit.each((i, ut) => (ut.innerText = 'ML'))
   }*/
-  $('.si_veg1').val(vegMom_si.toFixed(decimalPoint))
-  $('.si_veg2').val(flow1_si.toFixed(decimalPoint))
-  $('.si_veg3').val(flow2_si.toFixed(decimalPoint))
-  $('.si_flow1').val(flow3_si.toFixed(decimalPoint))
-  $('.si_flow2').val(flow4_si.toFixed(decimalPoint))
-  $('.si_flow3').val(flow5_si.toFixed(decimalPoint))
-  $('.si_flow4').val(flow6_si.toFixed(decimalPoint))
-  $('.si_flow5').val(flow7_si.toFixed(decimalPoint))
-  $('.si_flow6').val(flow8_si.toFixed(decimalPoint))
-  $('.si_flow7').val(flow9_si.toFixed(decimalPoint))
+
+  let siDecimalPoint =
+    select.value === 'DtL' && selectedUnit.value === 'imperial'
+      ? 2
+      : decimalPoint
+  $('.si_veg1').val(vegMom_si.toFixed(siDecimalPoint))
+  $('.si_veg2').val(flow1_si.toFixed(siDecimalPoint))
+  $('.si_veg3').val(flow2_si.toFixed(siDecimalPoint))
+  $('.si_flow1').val(flow3_si.toFixed(siDecimalPoint))
+  $('.si_flow2').val(flow4_si.toFixed(siDecimalPoint))
+  $('.si_flow3').val(flow5_si.toFixed(siDecimalPoint))
+  $('.si_flow4').val(flow6_si.toFixed(siDecimalPoint))
+  $('.si_flow5').val(flow7_si.toFixed(siDecimalPoint))
+  $('.si_flow6').val(flow8_si.toFixed(siDecimalPoint))
+  $('.si_flow7').val(flow9_si.toFixed(siDecimalPoint))
 
   $('.phosZyme_veg1').val(vegMom_phosZyme.toFixed(decimalPoint))
   $('.phosZyme_flow1').val(flow1_phosZyme.toFixed(decimalPoint))
@@ -456,7 +468,7 @@ function calculateValues(e) {
         .forEach((un) => (un.innerText = 'Grams'))
       document
         .querySelectorAll('#main-table .units  .small')
-        .forEach((un) => (un.innerText = 'per liter'))
+        .forEach((un) => (un.innerText = 'per litter'))
     } else {
       document
         .querySelectorAll('#main-table .units .unit')
@@ -488,7 +500,7 @@ function calculateValues(e) {
         )
       document
         .querySelectorAll('#main-table .stockRate  .small')
-        .forEach((un) => (un.innerText = 'per liter'))
+        .forEach((un) => (un.innerText = 'per litter'))
     } else {
       document
         .querySelectorAll('#main-table .stockRate .unit')
@@ -660,7 +672,6 @@ function displayTable(e) {
 
 //Setting the dimensions of the input table to the dimensions of the main table
 const setInputTabDim = () => {
-  
   const l = document.querySelectorAll('.inputs'),
     e = document.querySelectorAll('.weeks')
   l.forEach((l, o) => {
@@ -705,5 +716,4 @@ document
     })
   })
 
-  setInputTabDim()
-
+setInputTabDim()
