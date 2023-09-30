@@ -2059,8 +2059,8 @@ function calculateValues(e) {
     siStockRate,
     phosZymeStockRate
   if (select.value === 'DtL') {
-     document.querySelector('.unitSelectContainer .optionSelectBtn[data-value="imperial"]').innerHTML = "US";
-     document.querySelector('.unitSelectContainer .optionSelectBtn[data-value="metric"]').innerHTML = "Metric";
+     document.querySelector('.unitSelectContainer .optionSelectBtn[data-value="imperial"]').innerHTML = "US (Grams per Gallon)";
+     document.querySelector('.unitSelectContainer .optionSelectBtn[data-value="metric"]').innerHTML = "Metric (Grams per Liter)";
     if (selectedUnit.value === 'imperial') {
       ptA_vegMomsConstant = 2.0325
       ptB_vegMomsConstant = 1.355
@@ -2091,7 +2091,7 @@ function calculateValues(e) {
       }
     }
   } else if(select.value === 'conc') {
-    document.querySelector('.unitSelectContainer .optionSelectBtn[data-value="imperial"]').innerHTML = "US (grams per gallon)";
+    document.querySelector('.unitSelectContainer .optionSelectBtn[data-value="imperial"]').innerHTML = "US (mL per gallon)";
      document.querySelector('.unitSelectContainer .optionSelectBtn[data-value="metric"]').innerHTML = "Metric (mL per Liter)";
     if (selectedUnit.value === 'imperial') {
       ptA_vegMomsConstant = 11.3
@@ -2127,7 +2127,7 @@ function calculateValues(e) {
       }
     }
   }else if (select.value === '4-3-3'){
-    document.querySelector('.unitSelectContainer .optionSelectBtn[data-value="imperial"]').innerHTML = "US (grams per gallon)";
+    document.querySelector('.unitSelectContainer .optionSelectBtn[data-value="imperial"]').innerHTML = "US (mL per Gallon)";
      document.querySelector('.unitSelectContainer .optionSelectBtn[data-value="metric"]').innerHTML = "Metric (mL per Liter)";
     if (selectedUnit.value === 'imperial') {
       ptA_vegMomsConstant = 9.06
