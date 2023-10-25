@@ -558,6 +558,15 @@
       }
 
       @media print {
+        .header h1 {
+          margin-bottom: 0;
+        }
+        .darkRow {
+          display: none;
+        }
+        .visualContainer {
+          margin: 0 0 10px 0;
+        }
         .btn,
         .save-pdf,
         store-header,
@@ -597,7 +606,7 @@
         }
         /* Rotating the entire content */
         .content {
-          transform: rotate(90deg) translateY(60px);
+          transform: rotate(90deg);
         }
         #main-table > tbody > tr > td.results {
           min-width: 0px;
@@ -654,7 +663,7 @@
           background: transparent;
         }
         body {
-          padding: 100px 200px;
+          padding: 100px;
           display: flex;
           align-items: center;
           justify-content: center;
