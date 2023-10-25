@@ -663,11 +663,17 @@
         .content {
           transform: rotate(90deg) translateY(20px);
         }
+        .logo img {
+          width: 350px;
+          height: 155px;
+        }
         body {
-          padding: 150px;
+          padding: 120px;
           display: flex;
           align-items: center;
           justify-content: center;
+          page-break-inside: avoid;
+          max-height: 95vh;
         }
         .visualContainer .optionSelectBtn {
           border-color: #000;
