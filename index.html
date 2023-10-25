@@ -1,4 +1,8 @@
 <style>
+  html,
+  body {
+    height: fit-content;
+  }
   @font-face {
     font-family: "Industrial";
     src: url("Industrial-regular.ttf") format("truetype");
@@ -33,7 +37,6 @@
 
   /**** PREVIEW***/
   html {
-    min-height: 100vh;
     background: #000;
   }
 
@@ -557,7 +560,7 @@
 
     .logo {
       display: block;
-      margin-left: 200px;
+      margin-left: 0;
     }
     .ec_target {
       width: 215px !important;
@@ -566,7 +569,7 @@
     .input-table,
     #main-table {
       width: 1000px !important;
-      margin-left: 200px;
+      margin-left: 0;
     }
     .align-center {
       display: block;
@@ -577,11 +580,6 @@
     }
     .body {
       background: white;
-    }
-
-    .content {
-      position: absolute;
-      top: 0;
     }
 
     .input-container,
@@ -615,9 +613,7 @@
       min-width: 0;
       font-family: inherit;
     }
-    .header {
-      margin-left: 300px;
-    }
+
     .primary-output {
       font-size: 1rem;
     }
@@ -642,6 +638,26 @@
 
     @page {
       size: portrait;
+    }
+    html {
+      background: transparent;
+    }
+    body {
+      padding: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .visualContainer .optionSelectBtn {
+      border-color: #000;
+    }
+
+    .visualContainer .optionSelectBtn.optionSelected {
+      border-color: #000;
+    }
+
+    td.darkRowCell {
+      background: #fff;
     }
   }
 
@@ -699,7 +715,7 @@
 <div class="content">
   <div class="logo">
     <img
-      src="https://uploads-ssl.webflow.com/6123e9d3ed0c5e7ee1736109/615c9aa8f91b11fd092d5e81_logo.png"
+      src="//www.frontrowag.com/cdn/shop/files/Front_Row_Ag_Logo_No_Tagline_White_350x.png?v=1653943144"
       alt="Front Row Ag"
     />
     <!-- Src for PC, on server use the appropriate src -->
@@ -3013,9 +3029,18 @@
 
   //Print prompt when "Save As PDF" button is pressed
   function saveAsPDF(e) {
+    document.title = "My new title";
     window.print();
     e.preventDefault();
   }
+
+  window.addEventListener("beforeprint", (event) => {
+    document.title = "My desired save filename";
+  });
+
+  window.addEventListener("afterprint", (event) => {
+    document.title = "The original page title";
+  });
 
   //Slide Table in first time Calculate is pressed
   function displayTable(e) {
@@ -3083,4 +3108,22 @@
     });
 
   // setInputTabDim()
+
+  const getCurrentDate = () => {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear().toString().slice(-2); // Get the last two digits of the year
+    const month = (currentDate.getMonth() + 1).toString().padStart(2, "0"); // Add 1 to month since it's zero-based, and pad with '0'
+    const day = currentDate.getDate().toString().padStart(2, "0"); // Pad the day with '0'
+
+    const yyMMdd = year + "-" + month + "-" + day;
+    return yyMMdd;
+  };
+  const documentTitle = document.title;
+  window.addEventListener("beforeprint", (event) => {
+    document.title = getCurrentDate() + "-Front-Row-Ag-Custom-Feed-Chart";
+  });
+
+  window.addEventListener("afterprint", (event) => {
+    document.title = documentTitle;
+  });
 </script>
